@@ -1,23 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa de cambio</title>
     <script src="./codigo.js"></script>
-    <link rel="stylesheet" href="/estilos.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
+
 <body>
-    <h3>Casa de Cambio </h3>
-    <form class="formulario">
-        <p>Seleccionar moneda a convertir</p>
-        <input type="radio" name="cambio" id="uno">Dólar
-        <input type="radio" name="cambio" id="dos">Euro
-        <input type="radio" name="cambio" id="tres">Peso Argentino
-        <p>Ingrese cantidad de pesos uruguayos:</p>
-        <input type="number" id="valor" min="1" max="500000">
-        <input type="button" id="cotizador" value="cotizar" onclick="convertir()">
-    </form>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Ejercicios Js</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="cambio">
+        <h3>Casa de Cambio </h3>
+        <form class="formulario">
+            <p>Seleccionar moneda a convertir</p>
+            <input type="radio" name="cambio" id="uno">Dólar
+            <input type="radio" name="cambio" id="dos">Euro
+            <input type="radio" name="cambio" id="tres">Peso Argentino
+            <p>Ingrese cantidad de pesos uruguayos:</p>
+            <input type="number" id="valor" min="1" max="500000">
+            <input type="button" id="cotizador" value="cotizar" onclick="convertir()">
+        </form>
+    </div>
+    <div class="container py-2">
+        <p class="lead">Ingresar tu 11 ideal para el mundial</p>
+        <form class="formulario-usuarios">
+            <input id="nombre" type="text" placeholder="ingresa su nombre" class="form-control my-2">
+            <input id="edad" type="text" placeholder="ingresa su posicion" class="form-control my-2">
+            <button id="boton" class="btn btn-success" type="reset" onclick="capturar();">Agregar</button>
+
+        </form>
+    </div>
+    <div class="container">
+        <table class="table" id="tabla">
+            <thead>
+                <th>Nombre</th>
+                <Th>Posicion</Th>
+            </thead>
+        </table>
+
+    </div>
+
+    <script>
+        function capturar() {
+            function Persona(nombre, edad) {
+                this.nombre = nombre;
+                this.edad = edad;
+            }
+            var nombreCapturar = document.getElementById("nombre").value;
+            var edadCapturar = document.getElementById("edad").value;
+            nuevoSujeto = new Persona(nombreCapturar, edadCapturar);
+            console.log(nuevoSujeto);
+            agregar();
+        }
+
+        var BaseDatos = [];
+        function agregar() {
+            BaseDatos.push(nuevoSujeto);
+            console.log(BaseDatos);
+            document.getElementById("tabla").innerHTML += '<tbody><td>' + nuevoSujeto.nombre + '</td><td>' + nuevoSujeto.edad + '</td></tbody>';
+        };
+    </script>
 </body>
+
 </html>

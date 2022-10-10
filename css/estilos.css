@@ -1,0 +1,54 @@
+* {
+    background-color: yellow!important;
+    justify-content: center;
+    text-align: center;  
+}
+
+h3 {
+    font-size: 40px;
+    font-family: monospace;
+    text-decoration: underline;
+}
+
+.cambio {
+    margin-top: 50px;
+}
+.formulario {
+    margin-top: 20px;
+    font-size: 19px;
+    font-family: monospace;
+}
+
+#uno {
+    width: 80px;
+    height: 15px;
+}
+
+#dos {
+    width: 80px;
+    height: 15px;
+}
+
+#tres {
+    width: 80px;
+    height: 15px;
+}
+
+/* Estilo usuarios*/
+
+.lead {
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;   
+}
+
+#boton {
+    background-color: black !important;
+}
+
+#tabla {
+    background:  red !important;
+}
+
+.container {
+    margin-top: 50px;
+}
